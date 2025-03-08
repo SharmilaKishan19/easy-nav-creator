@@ -1,5 +1,9 @@
 
+<<<<<<< HEAD
 export type FieldType = 'text' | 'number' | 'email' | 'date' | 'text area' | 'select' | 'checkbox' | 'radio' | 'file';
+=======
+export type FieldType = 'text' | 'number' | 'email' | 'date' | 'textarea' | 'select' | 'checkbox' | 'radio';
+>>>>>>> 7f8c665a3394f82893538303db092d41def27fcf
 
 export interface Field {
   id: string;
@@ -32,6 +36,7 @@ export interface FormSubmission {
   values: Record<string, any>;
   submittedAt: string;
 }
+<<<<<<< HEAD
 
 export interface MenuItem {
   label: string;
@@ -39,3 +44,5 @@ export interface MenuItem {
   href: string,
   active?: boolean
 }
+=======
+>>>>>>> 7f8c665a3394f82893538303db092d41def27fcf
