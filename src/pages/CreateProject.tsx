@@ -91,16 +91,13 @@ const CreateProject = () => {
       templateId: selectedTemplateId,
       createdAt: new Date().toISOString(),
     };
-
+    
     if (id && selectedProject) {
-      const haveSubmissions: boolean = Boolean(
-        getSubmissionsByProjectId(id).length
-      );
+      const haveSubmissions: boolean = Boolean(getSubmissionsByProjectId(id).length);
       if (haveSubmissions) {
         toast({
           title: "Error",
-          description:
-            "Can not edit the project. Already project have submissions",
+          description: "Can not edit the project. Already project have submissions",
           variant: "destructive",
         });
         return;
@@ -113,6 +110,7 @@ const CreateProject = () => {
       };
       const result = updateProject(updatedProjectMeta);
       console.log("result", result);
+      
     } else {
       saveProject(newProject);
     }
@@ -150,9 +148,9 @@ const CreateProject = () => {
         <Card>
           <CardHeader>
             <CardTitle>Project Information</CardTitle>
-            {/* <CardDescription>
+            <CardDescription>
               Provide basic information about your project
-            </CardDescription> */}
+            </CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="space-y-2">
