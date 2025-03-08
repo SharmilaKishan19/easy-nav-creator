@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React, { useState, useEffect } from "react";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
@@ -18,31 +17,12 @@ import { Project } from "@/lib/types";
 const Projects = () => {
   const [projects, setProjects] = useState<Project[]>([]);
 
-=======
-
-import React, { useState, useEffect } from 'react';
-import { Layout } from '@/components/layout/Layout';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { Plus, FileText, ArrowRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
-import { getProjects, getTemplateById } from '@/lib/storage';
-import { Project } from '@/lib/types';
-
-const Projects = () => {
-  const [projects, setProjects] = useState<Project[]>([]);
-  
->>>>>>> 7f8c665a3394f82893538303db092d41def27fcf
   useEffect(() => {
     const loadProjects = () => {
       const loadedProjects = getProjects();
       setProjects(loadedProjects);
     };
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> 7f8c665a3394f82893538303db092d41def27fcf
     loadProjects();
   }, []);
 
@@ -70,12 +50,8 @@ const Projects = () => {
           <Card className="border-dashed border-2">
             <CardContent className="p-6 flex flex-col items-center justify-center min-h-[200px] text-center">
               <p className="text-muted-foreground mb-4">
-<<<<<<< HEAD
                 No projects created yet. Create your first project to get
                 started.
-=======
-                No projects created yet. Create your first project to get started.
->>>>>>> 7f8c665a3394f82893538303db092d41def27fcf
               </p>
               <Button asChild>
                 <Link to="/projects/create">
@@ -89,7 +65,6 @@ const Projects = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {projects.map((project) => {
               const template = getTemplateById(project.templateId);
-<<<<<<< HEAD
 
               return (
                 <Card
@@ -120,41 +95,18 @@ const Projects = () => {
                     <p className="text-sm text-muted-foreground">
                       Created:{" "}
                       {new Date(project.createdAt).toLocaleDateString()}
-=======
-              
-              return (
-                <Card key={project.id} className="transition-all hover:shadow-md">
-                  <CardHeader>
-                    <CardTitle>{project.name}</CardTitle>
-                    <CardDescription>{project.description}</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-sm text-muted-foreground">
-                      Template: {template?.name || 'Unknown'}
-                    </p>
-                    <p className="text-sm text-muted-foreground">
-                      Created: {new Date(project.createdAt).toLocaleDateString()}
->>>>>>> 7f8c665a3394f82893538303db092d41def27fcf
                     </p>
                   </CardContent>
                   <CardFooter className="flex justify-between gap-2">
                     <Button variant="outline" size="sm" asChild>
                       <Link to={`/projects/${project.id}/form`}>
                         <FileText className="h-4 w-4 mr-1" />
-<<<<<<< HEAD
                         Create
-=======
-                        New Submission
->>>>>>> 7f8c665a3394f82893538303db092d41def27fcf
                       </Link>
                     </Button>
                     <Button variant="outline" size="sm" asChild>
                       <Link to={`/projects/${project.id}`}>
-<<<<<<< HEAD
                         View
-=======
-                        View Submissions
->>>>>>> 7f8c665a3394f82893538303db092d41def27fcf
                         <ArrowRight className="h-4 w-4 ml-1" />
                       </Link>
                     </Button>

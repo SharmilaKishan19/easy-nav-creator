@@ -20,12 +20,12 @@ const Index = () => {
       <div className="space-y-8 py-6">
         <div className="space-y-2">
           <h2 className="text-3xl font-display font-semibold tracking-tight transition-colors">
-            {/* Template Management System */}
+            Template Management System
           </h2>
-          {/* <p className="text-muted-foreground">
+          <p className="text-muted-foreground">
             Create custom templates, manage projects and collect form
             submissions easily.
-          </p> */}
+          </p>
         </div>
 
         <Fragment>
@@ -42,10 +42,10 @@ const Index = () => {
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="p-6 pt-0">
-                  {/* <p className="text-sm text-muted-foreground mb-4">
+                  <p className="text-sm text-muted-foreground mb-4">
                     Design reusable templates with various field types including
                     text, select, checkboxes, and more.
-                  </p> */}
+                  </p>
                   <Button asChild>
                     <Link to="/templates">
                       Manage Templates <ArrowRight className="h-4 w-4 ml-1" />
@@ -66,8 +66,8 @@ const Index = () => {
                 </CardHeader>
                 <CardContent className="p-6 pt-0">
                   <p className="text-sm text-muted-foreground mb-4">
-                    {/* Organize your work into projects, each using a specific
-                    template for data collection and form submissions. */}
+                    Organize your work into projects, each using a specific
+                    template for data collection and form submissions.
                   </p>
                   <Button asChild>
                     <Link to="/projects">
@@ -86,9 +86,9 @@ const Index = () => {
                     Get Started
                   </h3>
                   <p className="text-sm text-muted-foreground mb-4">
-                    {/* Begin by creating templates for your forms, then create
+                    Begin by creating templates for your forms, then create
                     projects that use these templates. Collect form submissions
-                    and view them all in one place. */}
+                    and view them all in one place.
                   </p>
                   <div className="space-y-2">
                     <Button asChild className="w-full md:w-auto">
