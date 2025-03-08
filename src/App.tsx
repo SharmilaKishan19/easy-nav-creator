@@ -25,6 +25,16 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+<<<<<<< HEAD
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/projects/create" element={<CreateProject />} />
+          <Route path="/projects/edit/:id" element={<CreateProject />} />
+          <Route path="/projects/:id" element={<ProjectDetail />} />
+          <Route path="/projects/:id/form" element={<ProjectForm />} />
+          <Route path="/projects/:id/submission/:submissionId" element={<SubmissionDetail />} />
+          <Route path="/templates" element={<Templates />} />
+          <Route path="/templates/create" element={<CreateTemplate />} />
+=======
           <Route path="/browse" element={<Browse />} />
           <Route path="/templates" element={<Templates />} />
           <Route path="/templates/create" element={<CreateTemplate />} />
@@ -33,6 +43,7 @@ const App = () => (
           <Route path="/projects/:id" element={<ProjectDetail />} />
           <Route path="/projects/:id/form" element={<ProjectForm />} />
           <Route path="/projects/:id/submission/:submissionId" element={<SubmissionDetail />} />
+>>>>>>> 7f8c665a3394f82893538303db092d41def27fcf
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

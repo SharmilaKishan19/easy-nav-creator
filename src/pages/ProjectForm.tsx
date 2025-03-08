@@ -1,3 +1,23 @@
+<<<<<<< HEAD
+import React, { useState, useEffect } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import { Layout } from "@/components/layout/Layout";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { ArrowLeft, Save } from "lucide-react";
+import { Label } from "@/components/ui/label";
+import { getProjectById, getTemplateById, saveSubmission } from "@/lib/storage";
+import { Project, Template, Field, FormSubmission } from "@/lib/types";
+import { useToast } from "@/hooks/use-toast";
+import RenderForm from "@/components/ui/render-form";
+=======
 
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
@@ -14,6 +34,7 @@ import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { getProjectById, getTemplateById, saveSubmission } from '@/lib/storage';
 import { Project, Template, Field, FormSubmission } from '@/lib/types';
 import { useToast } from '@/hooks/use-toast';
+>>>>>>> 7f8c665a3394f82893538303db092d41def27fcf
 
 const ProjectForm = () => {
   const { id } = useParams<{ id: string }>();
@@ -28,6 +49,23 @@ const ProjectForm = () => {
 
     const loadProjectData = () => {
       const projectData = getProjectById(id);
+<<<<<<< HEAD
+
+      if (projectData) {
+        setProject(projectData);
+
+        const templateData = getTemplateById(projectData.templateId);
+        if (templateData) {
+          setTemplate(templateData);
+
+          // Initialize form values
+          const initialValues: Record<string, any> = {};
+          templateData.fields.forEach((field) => {
+            if (field.type === "checkbox") {
+              initialValues[field.id] = [];
+            } else {
+              initialValues[field.id] = "";
+=======
       
       if (projectData) {
         setProject(projectData);
@@ -43,17 +81,39 @@ const ProjectForm = () => {
               initialValues[field.id] = [];
             } else {
               initialValues[field.id] = '';
+>>>>>>> 7f8c665a3394f82893538303db092d41def27fcf
             }
           });
           setFormValues(initialValues);
         }
       }
     };
+<<<<<<< HEAD
+
+=======
     
+>>>>>>> 7f8c665a3394f82893538303db092d41def27fcf
     loadProjectData();
   }, [id]);
 
   const handleInputChange = (fieldId: string, value: any) => {
+<<<<<<< HEAD
+    console.log("value", value);
+
+    setFormValues({
+      ...formValues,
+      [fieldId]: value,
+    });
+  };
+
+  const handleCheckboxChange = (
+    fieldId: string,
+    option: string,
+    checked: boolean
+  ) => {
+    const currentValues = formValues[fieldId] || [];
+
+=======
     setFormValues({
       ...formValues,
       [fieldId]: value
@@ -63,26 +123,44 @@ const ProjectForm = () => {
   const handleCheckboxChange = (fieldId: string, option: string, checked: boolean) => {
     const currentValues = formValues[fieldId] || [];
     
+>>>>>>> 7f8c665a3394f82893538303db092d41def27fcf
     let newValues;
     if (checked) {
       newValues = [...currentValues, option];
     } else {
       newValues = currentValues.filter((val: string) => val !== option);
     }
+<<<<<<< HEAD
+
+    setFormValues({
+      ...formValues,
+      [fieldId]: newValues,
+=======
     
     setFormValues({
       ...formValues,
       [fieldId]: newValues
+>>>>>>> 7f8c665a3394f82893538303db092d41def27fcf
     });
   };
 
   const validateForm = () => {
     if (!template) return false;
+<<<<<<< HEAD
+
+    let isValid = true;
+    const errors: string[] = [];
+
+    console.log("template", formValues);
+
+    template.fields.forEach((field) => {
+=======
     
     let isValid = true;
     const errors: string[] = [];
     
     template.fields.forEach(field => {
+>>>>>>> 7f8c665a3394f82893538303db092d41def27fcf
       if (field.required) {
         const value = formValues[field.id];
         if (!value || (Array.isArray(value) && value.length === 0)) {
@@ -91,6 +169,17 @@ const ProjectForm = () => {
         }
       }
     });
+<<<<<<< HEAD
+
+    if (!isValid) {
+      toast({
+        title: "Validation Error",
+        description: errors.join(", "),
+        variant: "destructive",
+      });
+    }
+
+=======
     
     if (!isValid) {
       toast({
@@ -100,6 +189,7 @@ const ProjectForm = () => {
       });
     }
     
+>>>>>>> 7f8c665a3394f82893538303db092d41def27fcf
     return isValid;
   };
 
@@ -111,17 +201,27 @@ const ProjectForm = () => {
       projectId: project.id,
       templateId: template.id,
       values: formValues,
+<<<<<<< HEAD
+      submittedAt: new Date().toISOString(),
+=======
       submittedAt: new Date().toISOString()
+>>>>>>> 7f8c665a3394f82893538303db092d41def27fcf
     };
 
     saveSubmission(submission);
     toast({
       title: "Success",
+<<<<<<< HEAD
+      description: "Form submitted successfully",
+=======
       description: "Form submitted successfully"
+>>>>>>> 7f8c665a3394f82893538303db092d41def27fcf
     });
     navigate(`/projects/${id}`);
   };
 
+<<<<<<< HEAD
+=======
   const renderField = (field: Field) => {
     switch (field.type) {
       case 'text':
@@ -217,6 +317,7 @@ const ProjectForm = () => {
     }
   };
 
+>>>>>>> 7f8c665a3394f82893538303db092d41def27fcf
   if (!project || !template) {
     return (
       <Layout>
@@ -235,7 +336,15 @@ const ProjectForm = () => {
     <Layout>
       <div className="space-y-6 py-6">
         <div className="flex items-center gap-4">
+<<<<<<< HEAD
+          <Button
+            variant="outline"
+            size="icon"
+            onClick={() => navigate(`/projects/${id}`)}
+          >
+=======
           <Button variant="outline" size="icon" onClick={() => navigate(`/projects/${id}`)}>
+>>>>>>> 7f8c665a3394f82893538303db092d41def27fcf
             <ArrowLeft className="h-4 w-4" />
           </Button>
           <div>
@@ -251,6 +360,29 @@ const ProjectForm = () => {
         <Card>
           <CardHeader>
             <CardTitle>{template.name} Form</CardTitle>
+<<<<<<< HEAD
+            <CardDescription>{template.description}</CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-6">
+            {template.fields.map((field: Field) => (
+              <div key={field.id} className="space-y-2">
+                <Label htmlFor={field.id}>
+                  {field.label}
+                  {field.required && (
+                    <span className="text-destructive ml-1">*</span>
+                  )}
+                </Label>
+                {
+                  <RenderForm
+                    key={field.id}
+                    field={field}
+                    handleCheckboxChange={handleCheckboxChange}
+                    handleInputChange={handleInputChange}
+                    setFormValues={setFormValues}
+                    formValues={formValues}
+                  />
+                }
+=======
             <CardDescription>
               {template.description}
             </CardDescription>
@@ -263,11 +395,21 @@ const ProjectForm = () => {
                   {field.required && <span className="text-destructive ml-1">*</span>}
                 </Label>
                 {renderField(field)}
+>>>>>>> 7f8c665a3394f82893538303db092d41def27fcf
               </div>
             ))}
           </CardContent>
           <CardFooter className="flex justify-end gap-2">
+<<<<<<< HEAD
+            <Button
+              variant="outline"
+              onClick={() => navigate(`/projects/${id}`)}
+            >
+              Cancel
+            </Button>
+=======
             <Button variant="outline" onClick={() => navigate(`/projects/${id}`)}>Cancel</Button>
+>>>>>>> 7f8c665a3394f82893538303db092d41def27fcf
             <Button onClick={handleSubmit}>
               <Save className="mr-2 h-4 w-4" />
               Submit Form
