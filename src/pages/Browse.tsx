@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Layout } from "@/components/layout/Layout";
 
@@ -10,13 +9,11 @@ const Browse = () => {
           <h2 className="text-3xl font-display font-semibold tracking-tight">
             Browse
           </h2>
-          <p className="text-muted-foreground">
-            Discover content with our elegant browsing experience.
-          </p>
+          <p className="text-muted-foreground"></p>
         </div>
-        
+
         <div className="h-64 rounded-lg bg-secondary/50 flex items-center justify-center">
-          <p className="text-muted-foreground">Browse content will appear here</p>
+          <p className="text-muted-foreground"></p>
         </div>
       </div>
     </Layout>
