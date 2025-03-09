@@ -72,7 +72,7 @@ const Projects = () => {
                   className="transition-all hover:shadow-md"
                 >
                   <CardHeader>
-                    <div className="flex justify-between" >
+                    <div className="flex justify-between">
                       <div>
                         <CardTitle>{project.name}</CardTitle>
                         <CardDescription>{project.description}</CardDescription>

@@ -143,9 +143,7 @@ const CreateTemplate = () => {
         <Card>
           <CardHeader>
             <CardTitle></CardTitle>
-            <CardDescription>
-              Provide basic information about your template
-            </CardDescription>
+            <CardDescription></CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="space-y-2">

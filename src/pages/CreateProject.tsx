@@ -139,20 +139,14 @@ const CreateProject = () => {
             <h2 className="text-3xl font-display font-semibold tracking-tight">
               {id ? "Edit" : "Create"} Project
             </h2>
-            <p className="text-muted-foreground">
-              {id
-                ? "Edit the project and associated template "
-                : "Create a new project with an associated form template"}
-            </p>
+            <p className="text-muted-foreground">{id ? "" : ""}</p>
           </div>
         </div>
 
         <Card>
           <CardHeader>
             <CardTitle></CardTitle>
-            <CardDescription>
-              Provide basic information about your project
-            </CardDescription>
+            <CardDescription></CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="space-y-2">
