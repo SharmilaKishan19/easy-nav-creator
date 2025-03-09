@@ -22,10 +22,6 @@ const Index = () => {
           <h2 className="text-3xl font-display font-semibold tracking-tight transition-colors">
             Template Management System
           </h2>
-          <p className="text-muted-foreground">
-            Create custom templates, manage projects and collect form
-            submissions easily.
-          </p>
         </div>
 
         <Fragment>
@@ -37,15 +33,9 @@ const Index = () => {
                     <FileText className="h-5 w-5" />
                     Templates
                   </CardTitle>
-                  <CardDescription>
-                    Create and manage custom form templates
-                  </CardDescription>
+                  <CardDescription></CardDescription>
                 </CardHeader>
                 <CardContent className="p-6 pt-0">
-                  <p className="text-sm text-muted-foreground mb-4">
-                    Design reusable templates with various field types including
-                    text, select, checkboxes, and more.
-                  </p>
                   <Button asChild>
                     <Link to="/templates">
                       Manage Templates <ArrowRight className="h-4 w-4 ml-1" />
@@ -65,10 +55,6 @@ const Index = () => {
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="p-6 pt-0">
-                  <p className="text-sm text-muted-foreground mb-4">
-                    Organize your work into projects, each using a specific
-                    template for data collection and form submissions.
-                  </p>
                   <Button asChild>
                     <Link to="/projects">
                       Manage Projects <ArrowRight className="h-4 w-4 ml-1" />
@@ -85,11 +71,7 @@ const Index = () => {
                     <ListPlus className="h-5 w-5" />
                     Get Started
                   </h3>
-                  <p className="text-sm text-muted-foreground mb-4">
-                    Begin by creating templates for your forms, then create
-                    projects that use these templates. Collect form submissions
-                    and view them all in one place.
-                  </p>
+
                   <div className="space-y-2">
                     <Button asChild className="w-full md:w-auto">
                       <Link to="/templates/create">Create Template</Link>
